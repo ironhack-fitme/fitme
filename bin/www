@@ -6,8 +6,11 @@
 
 var app = require('../app');
 var debug = require('debug')('fitme:server');
+var locale = require ('locale');
 var http = require('http');
 
+
+locales = new locale.Locales('en_US');
 /**
  * Get port from environment and store in Express.
  */
