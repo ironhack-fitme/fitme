@@ -24,7 +24,6 @@ router.get('/add-activities', loginCheck(), (req, res, next) => {
       .catch(err => {
         console.log(err);
       })
-  const user = req.user;
   res.render('user/activities',{user});
 });
 module.exports = router;
