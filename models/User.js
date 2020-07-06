@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
   username: String,
   password: String,
-  fitbitId: String
+  fitbitId: String,
+  friends:[String]
 });
 
 const User = mongoose.model('User', userSchema);
