@@ -1,16 +1,21 @@
+<h1>signup page</h1>
+
 <form id="form" action="/auth/signup" method="POST">
-
-  <label for="username">Username</label><br />
-  <input type="text" name="username" />
-
-  <label for="password">Password</label><br />
-  <input type="password" name="password" />
-
-  {{#if message}}
-  <div class="error-message">{{message}}</div>
+  <div class="md-form form-group w-90">
+    <label for="exampleInputEmail1">User name</label>
+    <input type="text" class="form-control" name="username" id="exampleInputEmail1" required>
+  </div>
+  <div class="md-form form-group  w-90">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
+  </div>
+  <div class="md-form form-group  w-90">
+    <label for="exampleInputPassword1">Email</label>
+    <input type="email" class="form-control" id="exampleInputPassword1" name="email" required>
+  </div>
+  <button type="submit" class="btn btn-primary">sign up</button>
+  <button type="submit" class="btn btn-primary"><a href="/auth/fitbit">Login via Fitbit</a></button>
+  {{#if errorMessage}}
+  <div class="error-message">{{errorMessage}}</div>
   {{/if}}
-
-  <button type="submit">Sign up</button>
 </form>
-
-<a href="/">Home</a>

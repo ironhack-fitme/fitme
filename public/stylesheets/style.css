@@ -1,5 +1,5 @@
 body {
-  padding: 4%;
+  /* padding: 4%; */
   font:  "Lucida Grande", Helvetica, Arial, sans-serif;
   font-family: 'Work Sans', sans-serif;
   display: flex;
@@ -9,8 +9,11 @@ body {
  background:white;
 }
 
-a {
+.homeLogin {
   color: #00B7FF;
+}
+.homeLogin:hover{
+color:#00B7FF ;
 }
 
 #exampleInputPassword1,#exampleInputEmail1{
@@ -30,3 +33,27 @@ border-bottom:2px solid #21d5d8;
 -webkit-box-shadow: none;
 box-shadow: none;
 }
+.fixed-top{
+  display: none;
+}
+
+a{
+  color: white;
+}
+a:hover{
+  text-decoration: none;
+  color: white;
+}
+@media only screen and (max-width: 320px) {
+
+.justify-content-end{
+  display: none;
+}
+.fixed-top{
+  display: block;
+}
+.mobile-2{
+  margin-bottom:20rem;
+}
+}
+
