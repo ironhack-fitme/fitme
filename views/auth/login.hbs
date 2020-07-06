@@ -1,20 +1,20 @@
-<h1>Welcome to the login page</h1>
+<h1>login page</h1>
 
-<form id="form" action="/auth/login" method="POST">
-
-  <label for="username">Username</label><br />
-  <input type="text" name="username" />
-
-  <label for="password">Password</label><br />
-  <input type="password" name="password" />
-
-  {{#if errorMessage}}
+  <form id="form" action="/auth/login" method="POST">
+    <div class="md-form form-group w-90">
+      <label for="exampleInputEmail1">User name</label>
+      <input type="text" class="form-control" name="username" id="exampleInputEmail1" required>
+    </div>
+    <div class="md-form form-group  w-90">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+    {{#if errorMessage}}
     <div class="error-message">{{errorMessage}}</div>
-  {{/if}}
-
-  <button type="submit">Log in</button>
-</form>
-
+    {{/if}}
+  </form>
+ 
 <a href="/">Home</a>
 <a href="/auth/fitbit">Login via Fitbit</a>
 <a href="/auth/signup">Sign up</a>
