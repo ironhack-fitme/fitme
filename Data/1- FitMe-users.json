@@ -1,0 +1,70 @@
+[{
+  "_id": {
+    "$oid": "5f0448a3e94e9502f667bd52"
+  },
+  "friends": [
+    {
+      "$oid": "5f0448a3e94e9502f667bd53"
+    },
+    {
+      "$oid": "5f0448a3e94e9502f667bd54"
+    }
+  ],
+  "avatar": "URL to the default avatar",
+  "activites": [],
+  "fullname": "Majd Sabik",
+  "username": "majd.sabik",
+  "email": "majd.sabik@fitme.com",
+  "password": "password1234",
+  "bio": "A mock account for Majd Sabik.",
+  "createdAt": {
+    "$date": "2020-07-07T10:04:19.907Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f0448a3e94e9502f667bd53"
+  },
+  "friends": [
+    {
+      "$oid": "5f0448a3e94e9502f667bd52"
+    },
+    {
+      "$oid": "5f0448a3e94e9502f667bd54"
+    }
+  ],
+  "avatar": "URL to the default avatar",
+  "activites": [],
+  "fullname": "Ritesh Taurani",
+  "username": "ritesh.taurani",
+  "email": "ritesh.taurani@fitme.com",
+  "password": "password1234",
+  "bio": "A mock account for Ritesh Taurani.",
+  "createdAt": {
+    "$date": "2020-07-07T10:04:19.908Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f0448a3e94e9502f667bd54"
+  },
+  "friends": [
+    {
+      "$oid": "5f0448a3e94e9502f667bd52"
+    },
+    {
+      "$oid": "5f0448a3e94e9502f667bd53"
+    }
+  ],
+  "avatar": "URL to the default avatar",
+  "activites": [],
+  "fullname": "Jamil Al-Sulaimani",
+  "username": "jamil.alsulaimani",
+  "email": "jamil.alsulaimani@fitme.com",
+  "password": "password1234",
+  "bio": "A mock account for Jamil Al-Sulaimani.",
+  "createdAt": {
+    "$date": "2020-07-07T10:04:19.909Z"
+  },
+  "__v": 0
+}]
