@@ -17,13 +17,9 @@ color:#00B7FF ;
 }
 
 #exampleInputPassword1,#exampleInputEmail1{
-  /* outline: 0;
-  border-width: 0 0 2px; */
-  /* border-bottom: 1px solid grey; */
   border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
-  /* border-bottom-style: groove; */
   background: white;
   border-bottom: 1px solid #116466;
 }
@@ -52,6 +48,5 @@ a:hover{
 .fixed-top{
   display: block;
 }
-
 }
 
