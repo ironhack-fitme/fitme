@@ -7,12 +7,10 @@ const axios = require('axios');
 router.get('/', (req, res, next) => {
   res.render('index');
 });
-
-router.get('/profile', loginCheck(), (req, res, next) => {
+router.get('/activities', loginCheck(), (req, res, next) => {
   const user = req.user;
-  res.render('user/profile');
+  res.render('user/activities');
 });
-
 router.get('/add-activities', loginCheck(), (req, res, next) => {
   console.log(req);
   const user = req.user;
