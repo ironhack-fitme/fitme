@@ -5,7 +5,7 @@ const axios = require("axios");
 
 /* GET home page. */
 
-router.get("/add-activities", loginCheck(), (req, res, next) => {
+router.get("/AddActivity", loginCheck(), (req, res, next) => {
   console.log(req);
   const user = req.user;
   axios
