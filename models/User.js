@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
   fullname: {
     type: String,
-    required: [true, "Please enter your full name"],
     trim: true,
   },
   username: {
@@ -12,11 +11,15 @@ const userSchema = new Schema({
     trim: true,
     unique: true,
   },
+  email: {
+    type: String,
+    required: [true, "Please enter your e-mail"],
+    trim: true,
+    unique: true,
+  },
   password: {
     type: String,
     required: [true, "Please enter your password"],
-    minlength: [6, "Password should be atleast minimum of 6 characters"],
-    maxlength: [12, "Password should be maximum of 12 characters"],
   },
   fitbitId: String,
   friends: [{ type: mongoose.Schema.ObjectId, ref: "User" }],
