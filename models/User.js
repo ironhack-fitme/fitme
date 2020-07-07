@@ -12,6 +12,12 @@ const userSchema = new Schema({
     trim: true,
     unique: true,
   },
+  email: {
+    type: String,
+    required: [true, "Please enter your e-mail"],
+    trim: true,
+    unique: true,
+  },
   password: {
     type: String,
     required: [true, "Please enter your password"],
