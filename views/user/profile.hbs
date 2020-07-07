@@ -1,7 +1,39 @@
 <div style="margin-top: 20%;padding:4%;border:1px solid #00B7FF;border-radius:4%">
-{{#with user}}
-this is your profile page {{username}}
-{{firends}}
-{{avatar}}
+    {{#with user}}
+  {{username}}
+
+    <img src="{{avatar}}" alt="" style="width: 70px;border-radius:46%" onclick=" document.
+       getElementById('id01').style.display='block' "  id="load" style="width:auto;">
+    <div id="id01" class="modal bg-primary" style="position: fixed;top:5rem;left:30rem;width:80%;height:20%; padding:2%;transform:translateX(-28rem);transition:0.7s">
+           <form action="/profile/add" method="post" enctype="multipart/form-data">
+            <div class="imgcontainer">
+                <span onclick="document
+         .getElementById('id01').style.display='none'" class="close" title="Close Modal">
+                    &times;</span>
+            </div>
+                <div class="container">
+                    <label>Photo</label>
+                    <input style="color: #00B7FF;" type="file" name="photo">
+                    <button class="btn-primary" type="submit">Add your photo</button>
+            </div>
+         </div>
+    </form>
+</div>
+<script>
+    var modal = document.getElementById('id01');
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+<p>friends: {{this.friends.length}}</p>
+<p> activities: 
+    {{#each activites}}
+      {{activityType}}
+    {{/each}}
+</p>
+
+
 {{/with}}
-</div> 
+</div>
