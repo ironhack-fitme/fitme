@@ -170,6 +170,9 @@ app.use('/', index);
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
 
+const profile = require('./routes/profile');
+app.use('/', profile);
+
 //error handler
 app.use((err, req, res, next) => {
   // set locals, only providing error in development

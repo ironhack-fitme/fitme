@@ -32,6 +32,5 @@ const activitySchema = new Schema({
   likes: [{ type: mongoose.Schema.ObjectId, ref: "User" }],
   comments: [{ type: mongoose.Schema.ObjectId, ref: "Comment" }],
 });
-
 const Activity = mongoose.model("Activity", activitySchema);
 module.exports = Activity;
