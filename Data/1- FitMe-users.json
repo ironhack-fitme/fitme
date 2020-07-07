@@ -15,7 +15,7 @@
   "fullname": "Majd Sabik",
   "username": "majd.sabik",
   "email": "majd.sabik@fitme.com",
-  "password": "password1234",
+  "password": "$2b$10$auD9b39PZtnnpbl6AkYuZusnGnfWhV15hwaJob1rc6LpBOUtA/4Xa",
   "bio": "A mock account for Majd Sabik.",
   "createdAt": {
     "$date": "2020-07-07T10:04:19.907Z"
@@ -38,7 +38,7 @@
   "fullname": "Ritesh Taurani",
   "username": "ritesh.taurani",
   "email": "ritesh.taurani@fitme.com",
-  "password": "password1234",
+  "password": "$2b$10$auD9b39PZtnnpbl6AkYuZusnGnfWhV15hwaJob1rc6LpBOUtA/4Xa",
   "bio": "A mock account for Ritesh Taurani.",
   "createdAt": {
     "$date": "2020-07-07T10:04:19.908Z"
@@ -61,7 +61,7 @@
   "fullname": "Jamil Al-Sulaimani",
   "username": "jamil.alsulaimani",
   "email": "jamil.alsulaimani@fitme.com",
-  "password": "password1234",
+  "password": "$2b$10$auD9b39PZtnnpbl6AkYuZusnGnfWhV15hwaJob1rc6LpBOUtA/4Xa",
   "bio": "A mock account for Jamil Al-Sulaimani.",
   "createdAt": {
     "$date": "2020-07-07T10:04:19.909Z"
