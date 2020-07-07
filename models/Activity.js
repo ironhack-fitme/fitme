@@ -10,11 +10,16 @@ const activitySchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  date: {
+    type: Date,
+    default: Date.now,
+  },
   description: {
     type: String,
     trim: true,
   },
   activityType: {
+    required: true,
     type: String,
     default: "Running",
     enum: [
@@ -31,6 +36,8 @@ const activitySchema = new Schema({
   photo: String,
   likes: [{ type: mongoose.Schema.ObjectId, ref: "User" }],
   comments: [{ type: mongoose.Schema.ObjectId, ref: "Comment" }],
+  duration: Number,
+  distance: Number,
 });
 const Activity = mongoose.model("Activity", activitySchema);
 module.exports = Activity;
