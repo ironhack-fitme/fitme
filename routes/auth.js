@@ -11,7 +11,7 @@ router.get('/fitbit',
 ));
 
 router.get('/fitbit/callback', passport.authenticate( 'fitbit', { 
-        successRedirect: '/',
+        successRedirect: '/activities',
         failureRedirect: '/auth/login'
 }));
 
@@ -24,15 +24,6 @@ router.get('/signup', (req, res) => {
   res.render('auth/signup');
 });
 
-router.post(
-  '/login',
-  passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/auth/login',
-    //failureFlash: true,
-    //passReqToCallback: true
-  })
-)
 
 router.get('/logout', (req, res, next) => {
   // passport
@@ -44,7 +35,7 @@ router.get('/logout', (req, res, next) => {
 router.post(
   '/login',
   passport.authenticate('local', {
-    successRedirect: '/',
+    successRedirect: '/activities',
     failureRedirect: '/auth/login',
     failureFlash: true,
     passReqToCallback: true
@@ -122,7 +113,7 @@ router.post('/signup', (req, res, next) => {
           // passport - login the user
           req.login(dbUser, err => {
             if (err) next(err);
-            else res.redirect('/');
+            else res.redirect('/index/activities');
           });
 
           // redirect to login
