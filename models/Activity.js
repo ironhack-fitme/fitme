@@ -19,6 +19,7 @@ const activitySchema = new Schema({
     trim: true,
   },
   activityType: {
+    required: true,
     type: String,
     default: "Running",
     enum: [
