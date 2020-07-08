@@ -156,8 +156,8 @@ app.use(passport.session());
 const index = require("./routes/index");
 app.use("/", index);
 
-const addactivity = require("./routes/AddActivity");
-app.use("/", addactivity);
+const activity = require("./routes/activity");
+app.use("/", activity);
 
 const authRoutes = require("./routes/auth");
 app.use("/auth", authRoutes);
@@ -167,7 +167,7 @@ app.use("/", activitiesRoutes);
 
 const profile = require("./routes/profile");
 app.use("/", profile);
-//error handler
+
 app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
