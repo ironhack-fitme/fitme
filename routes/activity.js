@@ -49,52 +49,14 @@ router.post(
         User.findByIdAndUpdate(activity.owner, {
           $push: { activities: activity._id },
         }).then(() => {
-          res.redirect("/activities");
+          res.redirect("/user/profile");
         });
       })
       .catch((err) => console.log(err));
   }
 );
 
-router.post(
-  "/activity/edit",
-  uploader.single("photo"),
-  loginCheck(),
-  (req, res, next) => {
-    const activityId = req.body._id;
-    const {
-      activityType,
-      distance,
-      duration,
-      description,
-      calories,
-    } = req.body;
-    const owner = req.user._id;
-    console.log("Owner: " + owner);
-    let photo = null;
-    let photoId = null;
-    if (req.file) {
-      photo = req.file.url;
-      photoId = req.file.public_id;
-    }
-    const date = req.body.date || Date.now();
-    Activity.findByIdAndUpdate(activityId, {
-      activityType,
-      distance,
-      duration,
-      description,
-      calories,
-      photo,
-      photoId,
-      date,
-    }).then((activity) => {
-      console.log(activity);
-      res.redirect("/user/profile");
-    });
-  }
-);
-
-router.post("/activities/edit/:id", loginCheck(), (req, res, next) => {
+router.get("/activity/:id/edit/", loginCheck(), (req, res, next) => {
   const userId = req.user._id;
   const activityId = req.params.id;
   const types = Activity.schema.path("activityType").enumValues;
@@ -105,7 +67,50 @@ router.post("/activities/edit/:id", loginCheck(), (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
-router.post("/activities/delete/:id", loginCheck(), (req, res, next) => {
+router.post(
+  "/activity/:id/edit",
+  uploader.single("photo"),
+  loginCheck(),
+  (req, res, next) => {
+    const activityId = req.params.id;
+    const {
+      activityType,
+      distance,
+      duration,
+      description,
+      calories,
+    } = req.body;
+    let owner, photo, photoId, date;
+    Activity.findById(activityId)
+      .then((activity) => {
+        owner = activity.owner;
+        photo = activity.photo;
+        photoId = activity.photoId;
+        date = activity.date;
+      })
+      .then(() => {
+        if (req.file) {
+          photo = req.file.url;
+          photoId = req.file.public_id;
+        }
+        date = req.body.date || date;
+        Activity.findByIdAndUpdate(activityId, {
+          activityType,
+          distance,
+          duration,
+          description,
+          calories,
+          photo,
+          photoId,
+          date,
+        }).then((activity) => {
+          res.redirect("/user/profile");
+        });
+      });
+  }
+);
+
+router.post("/activity/delete/:id", loginCheck(), (req, res, next) => {
   const userId = req.user._id;
   const activityId = req.params.id;
   Activity.findByIdAndDelete(activityId)

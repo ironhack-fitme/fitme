@@ -37,10 +37,10 @@
     <div id="activity-details">
         <p style="font-style: 1em;"><span style="font-size: 1.5em;">Calories :</span> {{calories}}</p>
         <div class="deleteEdit">
-            <form action="/activities/edit/{{this._id}}" method="post">
+            <form action="/activity/{{_id}}/edit" method="get">
                 <button type="submit" style="border:none"><i class="fas fa-edit" type="submit"></i></button>
             </form>
-            <form action="/activities/delete/{{this._id}}" method="post">
+            <form action="/activity/delete/{{_id}}" method="post">
                 <button type="submit" style="border:none"><i class="fas fa-trash-alt" type="submit"></i></button>
             </form>
         </div>
