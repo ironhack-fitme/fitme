@@ -7,20 +7,23 @@ const User = require('../models/User');
 
 router.get('/activities', loginCheck(), (req, res, next) => {
     const user = req.user;
-    User.findById(req.user).then(foundUser=>{
-        Activity.find().then(activites => {
-            console.log(activities);
-            activites=activites.filter(activity=>{
-                return user.friends.includes(activity.owner)
+     User.findById(user._id).then(foundUser=>{
+        Activity.find().populate('owner').then(activities => {
+            console.log(user.friends)
+            activities=activities.filter(activity=>{
+                return user.friends.includes(activity.owner._id)
                 
             })
-            res.render('user/activities', {Activites})
+            console.log('this is activites',activities);
+            res.render('user/activities',{activities})
+        })
             .catch(err => {
             console.log(err);
           })
-      })
-    })
- ;
+     
+     })
+ 
 });
+
 
 module.exports = router;

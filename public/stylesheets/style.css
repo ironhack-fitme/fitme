@@ -48,5 +48,20 @@ a:hover{
 .fixed-top{
   display: block;
 }
+
+.fa {
+  font-size: 50px;
+  cursor: pointer;
+  user-select: none;
+}
+.fa-thumbs-up {
+  color: blue;
+}
+.fa-thumbs-down {
+  color: red;
+}
+.fa:hover {
+  transform: scale(1.2);
+}
 }
 
