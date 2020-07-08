@@ -162,8 +162,8 @@ app.use("/", addactivity);
 const authRoutes = require("./routes/auth");
 app.use("/auth", authRoutes);
 
-const profile = require('./routes/profile');
-app.use('/', profile);
+const activitiesRoutes = require('./routes/activities');
+app.use('/', activitiesRoutes);
 
 //error handler
 app.use((err, req, res, next) => {
