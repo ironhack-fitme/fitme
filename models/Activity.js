@@ -34,6 +34,7 @@ const activitySchema = new Schema({
   },
   calories: Number,
   photo: String,
+  photoId: String,
   likes: [{ type: mongoose.Schema.ObjectId, ref: "User" }],
   comments: [{ type: mongoose.Schema.ObjectId, ref: "Comment" }],
   duration: Number,
