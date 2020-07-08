@@ -107,7 +107,7 @@ router.post('/signup', (req, res, next) => {
       // we can create a user with the username and password pair
       const salt = bcrypt.genSaltSync();
       const hash = bcrypt.hashSync(password, salt);
-
+      console.log(hash);
       User.create({ username: username, password: hash })
         .then(dbUser => {
           // passport - login the user
