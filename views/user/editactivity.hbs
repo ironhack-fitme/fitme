@@ -1,5 +1,5 @@
 <h2>Edit activity</h2>
-<form action="/activity/edit" method="post" enctype="multipart/form-data">
+<form action="/activity/{{activity._id}}/edit" method="post" enctype="multipart/form-data">
   <select name="activityType" id="activityType">
     {{#each types}}
     <option value="{{this}}">{{this}}</option>
@@ -7,22 +7,22 @@
   </select>
 
   <label for="occupation">Enter distance</label>
-  <input type="number" id="distance" name="distance" min="0" value={{activity.distance}}>
+  <input type="number" id="distance" name="distance" min="0" value="{{activity.distance}}" />
 
   <label for="duration">Enter duration in minutes:</label>
-  <input type="number" id="duration" name="duration" min="0" value={{activity.duration}}>
+  <input type="number" id="duration" name="duration" min="0" value="{{activity.duration}}" />
 
   <label for="date">Select activity date</label>
-  <input type="date" id="date" name="date" value={{activity.date}}>
+  <input type="date" id="date" name="date" value="{{activity.date}}" />
 
   <label for="description">Describe the activits</label>
-  <textarea id="description" name="description" rows="5" cols="33">{{activity.description}}"</textarea>
+  <textarea id="description" name="description" rows="5" cols="33">{{activity.description}}</textarea>
 
   <label for="calories">Enter the number of burned calories</label>
-  <input type="number" id="calories" name="calories" min="0" value={{activity.calories}}>
+  <input type="number" id="calories" name="calories" min="0" value="{{activity.calories}}" />
 
   <label>Upload activity photo</label>
-  <input type="file" name="photo">
+  <input type="file" name="photo" />
 
   <button type="submit">Edit activity</button>
 </form>
