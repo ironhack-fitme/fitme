@@ -8,7 +8,7 @@ router.get("/user/:_id", loginCheck(), (req, res) => {
   const userId = req.user;
   console.log(userId);
   User.findById(userId)
-    .populate("activities")
+    .populate("activites")
     .then((userFromDataBase) => {
       console.log(userFromDataBase.activites);
       res.render("user/profile", {
@@ -19,12 +19,13 @@ router.get("/user/:_id", loginCheck(), (req, res) => {
       console.log(err);
     });
 });
-
 router.post("/profile/add", uploader.single("photo"), (req, res, next) => {
   const { title, description } = req.body;
   const imgPath = req.file.url;
   const imgName = req.file.originalname;
-  User.findByIdAndUpdate(req.user._id, { avatar: imgPath })
+  User.findByIdAndUpdate(req.user._id, {
+    avatar: imgPath,
+  })
     .then((userFromDB) => {
       res.redirect("/user/:_id");
     })
@@ -37,6 +38,5 @@ router.post("/profile/add", uploader.single("photo"), (req, res, next) => {
   //   })
 });
 //---------------
-
 module.exports = router;
 // module.exports=uploader;
