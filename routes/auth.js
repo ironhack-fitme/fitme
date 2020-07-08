@@ -30,7 +30,6 @@ router.get("/signup", (req, res) => {
 
 router.get("/logout", (req, res, next) => {
   // passport
-  console.log(req);
   req.logout();
   res.redirect("/");
 });
@@ -45,13 +44,11 @@ router.post(
   })
 );
 router.get("/logout", (req, res, next) => {
-  console.log(req);
   req.logout();
   res.redirect("/");
 });
 router.post("/signup", (req, res, next) => {
-  const { username, password } = req.body;
-
+  const { username, password, email } = req.body;
   if (password.length < 8) {
     res.render("auth/signup", {
       message: "Your password must be 8 characters minimun.",
@@ -62,7 +59,6 @@ router.post("/signup", (req, res, next) => {
     res.render("auth/signup", { message: "Your username cannot be empty" });
     return;
   }
-
   User.findOne({ username: username }).then((found) => {
     if (found !== null) {
       res.render("auth/signup", { message: "Wrong credentials" });
@@ -71,52 +67,12 @@ router.post("/signup", (req, res, next) => {
       const salt = bcrypt.genSaltSync();
       const hash = bcrypt.hashSync(password, salt);
 
-      User.create({ username: username, password: hash })
+      User.create({ username: username, password: hash, email })
         .then((dbUser) => {
           // passport - login the user
           req.login(dbUser, (err) => {
             if (err) next(err);
-            else res.redirect("/");
-          });
-
-          // redirect to login
-          res.redirect("login");
-        })
-        .catch((err) => {
-          next(err);
-        });
-    }
-  });
-});
-
-router.post("/signup", (req, res, next) => {
-  const { username, password } = req.body;
-
-  if (password.length < 8) {
-    res.render("auth/signup", {
-      message: "Your password must be 8 characters minimun.",
-    });
-    return;
-  }
-  if (username === "") {
-    res.render("auth/signup", { message: "Your username cannot be empty" });
-    return;
-  }
-
-  User.findOne({ username: username }).then((found) => {
-    if (found !== null) {
-      res.render("auth/signup", { message: "Wrong credentials" });
-    } else {
-      // we can create a user with the username and password pair
-      const salt = bcrypt.genSaltSync();
-      const hash = bcrypt.hashSync(password, salt);
-      console.log(hash);
-      User.create({ username: username, password: hash })
-        .then((dbUser) => {
-          // passport - login the user
-          req.login(dbUser, (err) => {
-            if (err) next(err);
-            else res.redirect("/index/activities");
+            else res.redirect("/activities");
           });
 
           // redirect to login

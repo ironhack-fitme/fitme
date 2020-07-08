@@ -13,6 +13,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const FitbitStrategy = require("passport-fitbit-oauth2").FitbitOAuth2Strategy;
 const axios = require("axios");
+const flash = require("connect-flash");
 
 const app = express();
 
@@ -61,6 +62,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(flash());
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
