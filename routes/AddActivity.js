@@ -27,8 +27,8 @@ router.post(
       calories,
     } = req.body;
     const owner = req.user;
-    let photo = "No photo";
-    let photoId = "No photo";
+    let photo = null;
+    let photoId = null;
     if (req.file) {
       photo = req.file.url;
       photoId = req.file.public_id;
