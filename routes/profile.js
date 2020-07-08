@@ -1,5 +1,5 @@
 const express = require('express');
-const uploadCloud=require('../config/cloudinary')
+const uploadCloud=require('../config/cloudinary-profile')
 const {
   loginCheck
 } = require('./middlewares');
