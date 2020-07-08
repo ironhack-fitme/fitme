@@ -1,29 +1,22 @@
-
-
-
 <div>
-{{#each activities}}
-<div style="margin-top:5%;padding:4%;border:1px solid #00B7FF;border-radius:4%">
-<p style = "font-size: 1em;"><strong>{{owner.fullname}}</strong></p>
-<p style = "font-size: 2em;">{{activityType}}</p>
-<p style="font-size: 1em;"><span style="font-size: 1.5em;">Description:</span> {{description}}</p>
-<div id="activity-details">
-<p style="font-style: 1em;"><span style="font-size: 1.5em;">Calories :</span> {{calories}}</p>
-<i class="fa fa-thumbs-up"></i>
-<script>
-   document.querySelector(".fa").addEventListener("click", function(event) {
-      toggleLike(event);
-   });
-   function toggleLike(ele) {
-      ele.target.classList.toggle("fa-thumbs-down");
-   }
-</script>
+   {{#each activities}}
+   <div style="margin-top:5%;padding:4%;border:1px solid #00B7FF;border-radius:4%">
+      <p style="font-size: 1em;"><strong>{{owner.fullname}}</strong></p>
+      <p style="font-size: 2em;">{{activityType}}</p>
+      <p style="font-size: 1em;"><span style="font-size: 1.5em;">Description:</span> {{description}}</p>
+      <div id="activity-details">
+         <p style="font-style: 1em;"><span style="font-size: 1.5em;">Calories :</span> {{calories}}</p>
+         <i class="fa fa-thumbs-up "></i>
+         <script>
+            document.querySelector(".fa").addEventListener("click", function (event) {
+               toggleLike(event);
+            });
+            function toggleLike(ele) {
+               ele.target.classList.toggle("fa-thumbs-down");
+            }
+         </script>
+      </div>
+   </div>
+   {{/each}}
+   <a href="/auth/logout" style="color :black">Click here to logout</a>
 </div>
-
-</div>
-{{/each}}
-
-
-<a href="/auth/logout" style="color :black">Click here to logout</a>
-</div>
-

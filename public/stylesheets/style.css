@@ -1,69 +1,93 @@
 body {
   /* padding: 4%; */
-  font:  "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: "Lucida Grande", Helvetica, Arial, sans-serif;
   font-family: 'Work Sans', sans-serif;
   display: flex;
-  flex-flow: column ;
-  align-items:center;
- justify-content: center;
- background:white;
-
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
 }
 
 .homeLogin {
   color: #00B7FF;
 }
-.homeLogin:hover{
-color:#00B7FF ;
-;
+
+.homeLogin:hover {
+  color: #00B7FF;
+  ;
 }
 
-#exampleInputPassword1,#exampleInputEmail1{
+#exampleInputPassword1,
+#exampleInputEmail1 {
   border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
   background: white;
   border-bottom: 1px solid #116466;
 }
-#exampleInputPassword1:focus,#exampleInputEmail1:focus{
-outline: none;
-border-bottom:2px solid #21d5d8;
--webkit-box-shadow: none;
-box-shadow: none;
+
+#exampleInputPassword1:focus,
+#exampleInputEmail1:focus {
+  outline: none;
+  border-bottom: 2px solid #21d5d8;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
-.fixed-top{
+
+.fixed-top {
   display: none;
 }
 
-a{
+a {
   color: white;
 }
-a:hover{
+
+a:hover {
   text-decoration: none;
   color: white;
 }
-@media only screen and (max-width: 320px) {
 
-.justify-content-end{
-  display: none;
-}
-.fixed-top{
-  display: block;
+.head {
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 
-.fa {
-  font-size: 50px;
+.deleteEdit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+i {
   cursor: pointer;
-  user-select: none;
-}
-.fa-thumbs-up {
-  color: blue;
-}
-.fa-thumbs-down {
-  color: red;
-}
-.fa:hover {
-  transform: scale(1.2);
-}
+  margin-left: 6px;
 }
 
+@media only screen and (max-width: 320px) {
+  .justify-content-end {
+    display: none;
+  }
+
+  .fixed-top {
+    display: block;
+  }
+
+  .fa {
+    font-size: 50px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .fa-thumbs-up {
+    color: blue;
+  }
+
+  .fa-thumbs-down {
+    color: red;
+  }
+
+  .fa:hover {
+    transform: scale(1.2);
+  }
+}
