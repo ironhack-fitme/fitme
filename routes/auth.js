@@ -50,7 +50,7 @@ router.get("/logout", (req, res, next) => {
   res.redirect("/");
 });
 router.post("/signup", (req, res, next) => {
-  const { username, password } = req.body;
+  const { username, password, email } = req.body;
 
   if (password.length < 8) {
     res.render("auth/signup", {
@@ -71,12 +71,12 @@ router.post("/signup", (req, res, next) => {
       const salt = bcrypt.genSaltSync();
       const hash = bcrypt.hashSync(password, salt);
 
-      User.create({ username: username, password: hash })
+      User.create({ username: username, password: hash, email })
         .then((dbUser) => {
           // passport - login the user
           req.login(dbUser, (err) => {
             if (err) next(err);
-            else res.redirect("/");
+            else res.redirect("/activities");
           });
 
           // redirect to login
@@ -89,7 +89,7 @@ router.post("/signup", (req, res, next) => {
   });
 });
 
-router.post("/signup", (req, res, next) => {
+/* router.post("/signup", (req, res, next) => {
   const { username, password } = req.body;
 
   if (password.length < 8) {
@@ -127,6 +127,6 @@ router.post("/signup", (req, res, next) => {
         });
     }
   });
-});
+}); */
 
 module.exports = router;
