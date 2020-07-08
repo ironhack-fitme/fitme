@@ -7,7 +7,7 @@ const User = require("../models/User");
 router.get("/user/:_id", loginCheck(), (req, res) => {
   const userId = req.user;
   User.findById(userId)
-    .populate("activites")
+    .populate("activities")
     .then((userFromDataBase) => {
       res.render("user/profile", {
         user: userFromDataBase,

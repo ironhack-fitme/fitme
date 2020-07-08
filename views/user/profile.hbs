@@ -2,22 +2,22 @@
     {{#with user}}
     {{username}}
     <img src="{{avatar}}" alt="" style="width: 70px;border-radius:46%" onclick=" document.
-       getElementById('id01').style.display='block' " id="load" style="width:auto;">
-    <div id="id01" class="modal bg-primary"
-        style="position: fixed;top:5rem;left:30rem;width:80%;height:20%; padding:2%;transform:translateX(-28rem);">
-        <form action="/profile/add" method="post" enctype="multipart/form-data">
+      getElementById('id01').style.display='block' " id="load" style="width:auto;">
+    <div id="id01" class="modal">
+        <form class="modal-content animate" action="/profile/add" method="post" enctype="multipart/form-data">
             <div class="imgcontainer">
-                <span onclick="document
-         .getElementById('id01').style.display='none'" class="close" title="Close Modal">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">
                     &times;</span>
             </div>
             <div class="container">
                 <label>Photo</label>
-                <input style="color: #00B7FF;" type="file" name="photo">
+                <input type="file" name="photo">
                 <button class="btn-primary" type="submit">Add your photo</button>
             </div>
     </div>
-    </form>
+</div>
+</form>
+</div>
 </div>
 <script>
     var modal = document.getElementById('id01');
@@ -29,7 +29,7 @@
 </script>
 <p>friends: {{this.friends.length}}</p>
 <p> activities:
-    {{#each activites}}
+    {{#each activities}}
 <div style="margin-top:5%;padding:4%;border:1px solid #00B7FF;border-radius:4%">
     <p style="font-size: 1em;"><strong>{{owner.fullname}}</strong></p>
     <p style="font-size: 2em;">{{activityType}}</p>
@@ -37,9 +37,12 @@
     <div id="activity-details">
         <p style="font-style: 1em;"><span style="font-size: 1.5em;">Calories :</span> {{calories}}</p>
         <div class="deleteEdit">
-            <form action="/activities/edit/{{this._id}}" method="POST"><i class="fas fa-edit" type="submit"></i></form>
-            <form action="/activities/delete/{{this._id}}" method="POST">
-                <i class="fas fa-trash-alt" type="submit"></i></form>
+            <form action="/activities/edit/{{this._id}}" method="post">
+                <button type="submit" style="border:none"><i class="fas fa-edit" type="submit"></i></button>
+            </form>
+            <form action="/activities/delete/{{this._id}}" method="post">
+                <button type="submit" style="border:none"><i class="fas fa-trash-alt" type="submit"></i></button>
+            </form>
         </div>
     </div>
 </div>
