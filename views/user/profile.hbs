@@ -33,9 +33,12 @@
 <div style="margin-top:5%;padding:4%;border:1px solid #00B7FF;border-radius:4%">
     <p style="font-size: 1em;"><strong>{{owner.fullname}}</strong></p>
     <p style="font-size: 2em;">{{activityType}}</p>
-    <p style="font-size: 1em;"><span style="font-size: 1.5em;">Description:</span> {{description}}</p>
+    <p style="font-size: 1em;"><span style="font-size: 1.5em;">Description: </span> {{description}}</p>
     <div id="activity-details">
-        <p style="font-style: 1em;"><span style="font-size: 1.5em;">Calories :</span> {{calories}}</p>
+        <p style="font-style: 1em;"><span style="font-size: 1.5em;">Calories: </span> {{calories}}</p>
+        <p style="font-style: 1em;"><span style="font-size: 1.5em;">Duration: </span> {{duration}}</p>
+        <p style="font-style: 1em;"><span style="font-size: 1.5em;">Date: </span> {{date}}</p>
+        <img src="{{photo}}" alt="" width="25%">
         <div class="deleteEdit">
             <form action="/activity/{{_id}}/edit" method="get">
                 <button type="submit" style="border:none"><i class="fas fa-edit" type="submit"></i></button>
