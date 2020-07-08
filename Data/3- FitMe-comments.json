@@ -1,91 +1,50 @@
-[{
-  "_id": {
-    "$oid": "5f045013d2397f03648fdb2d"
+[
+  {
+    "_id": {
+      "$oid": "5f045070a06a820380491854"
+    },
+    "owner": {
+      "$oid": "5f0448a3e94e9502f667bd52"
+    },
+    "text": "Just a mock comment from Majd Sabik",
+    "Activity": {
+      "$oid": "5f044e581003d10348d743b8"
+    },
+    "createdAt": {
+      "$date": "2020-07-07T10:37:36.439Z"
+    },
+    "__v": 0
   },
-  "owner": {
-    "$oid": "5f0448a3e94e9502f667bd52"
+  {
+    "_id": {
+      "$oid": "5f045070a06a820380491855"
+    },
+    "owner": {
+      "$oid": "5f0448a3e94e9502f667bd53"
+    },
+    "text": "Just a mock comment from Ritesh Taurani",
+    "Activity": {
+      "$oid": "5f044e581003d10348d743b9"
+    },
+    "createdAt": {
+      "$date": "2020-07-07T10:37:36.441Z"
+    },
+    "__v": 0
   },
-  "text": "Just a mock comment from Majd Sabik",
-  "Activity": {
-    "$oid": "5f044e581003d10348d743b8"
-  },
-  "createdAt": {
-    "$date": "2020-07-07T10:36:03.881Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "5f045013d2397f03648fdb2e"
-  },
-  "owner": {
-    "$oid": "5f0448a3e94e9502f667bd53"
-  },
-  "text": "Just a mock activity from Ritesh Taurani",
-  "Activity": {
-    "$oid": "5f044e581003d10348d743b9"
-  },
-  "createdAt": {
-    "$date": "2020-07-07T10:36:03.883Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "5f045013d2397f03648fdb2f"
-  },
-  "owner": {
-    "$oid": "5f0448a3e94e9502f667bd54"
-  },
-  "text": "Just a mock activity from Jamil Al-Sulaimani",
-  "Activity": {
-    "$oid": "5f044e581003d10348d743ba"
-  },
-  "createdAt": {
-    "$date": "2020-07-07T10:36:03.883Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "5f045070a06a820380491854"
-  },
-  "owner": {
-    "$oid": "5f0448a3e94e9502f667bd52"
-  },
-  "text": "Just a mock comment from Majd Sabik",
-  "Activity": {
-    "$oid": "5f044e581003d10348d743b8"
-  },
-  "createdAt": {
-    "$date": "2020-07-07T10:37:36.439Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "5f045070a06a820380491855"
-  },
-  "owner": {
-    "$oid": "5f0448a3e94e9502f667bd53"
-  },
-  "text": "Just a mock comment from Ritesh Taurani",
-  "Activity": {
-    "$oid": "5f044e581003d10348d743b9"
-  },
-  "createdAt": {
-    "$date": "2020-07-07T10:37:36.441Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "5f045070a06a820380491856"
-  },
-  "owner": {
-    "$oid": "5f0448a3e94e9502f667bd54"
-  },
-  "text": "Just a mock comment from Jamil Al-Sulaimani",
-  "Activity": {
-    "$oid": "5f044e581003d10348d743ba"
-  },
-  "createdAt": {
-    "$date": "2020-07-07T10:37:36.441Z"
-  },
-  "__v": 0
-}]
+  {
+    "_id": {
+      "$oid": "5f045070a06a820380491856"
+    },
+    "owner": {
+      "$oid": "5f0448a3e94e9502f667bd54"
+    },
+    "text": "Just a mock comment from Jamil Al-Sulaimani",
+    "Activity": {
+      "$oid": "5f044e581003d10348d743ba"
+    },
+    "createdAt": {
+      "$date": "2020-07-07T10:37:36.441Z"
+    },
+    "__v": 0
+  }
+]

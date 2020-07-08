@@ -1,64 +1,68 @@
-[{
-  "_id": {
-    "$oid": "5f044e581003d10348d743b8"
+[
+  {
+    "_id": {
+      "$oid": "5f044e581003d10348d743b8"
+    },
+    "activityType": "Running",
+    "likes": [],
+    "comments": [],
+    "owner": {
+      "$oid": "5f0448a3e94e9502f667bd52"
+    },
+    "description": "Just a mock activity for Majd Sabik",
+    "calories": 100,
+    "duration": 5000,
+    "distance": 1000,
+    "createdAt": {
+      "$date": "2020-07-07T10:28:40.702Z"
+    },
+    "date": {
+      "$date": "2020-07-07T10:28:40.702Z"
+    },
+    "__v": 0
   },
-  "activityType": "Running",
-  "likes": [],
-  "comments": [],
-  "owner": {
-    "$oid": "5f0448a3e94e9502f667bd52"
+  {
+    "_id": {
+      "$oid": "5f044e581003d10348d743b9"
+    },
+    "activityType": "Running",
+    "likes": [],
+    "comments": [],
+    "owner": {
+      "$oid": "5f0448a3e94e9502f667bd53"
+    },
+    "description": "Just a mock activity for Ritesh Taurani",
+    "calories": 100,
+    "duration": 5000,
+    "distance": 1000,
+    "createdAt": {
+      "$date": "2020-07-07T10:28:40.704Z"
+    },
+    "date": {
+      "$date": "2020-07-07T10:28:40.704Z"
+    },
+    "__v": 0
   },
-  "description": "Just a mock activity for Majd Sabik",
-  "calories": 100,
-  "duration": 5000,
-  "distance": 1000,
-  "createdAt": {
-    "$date": "2020-07-07T10:28:40.702Z"
-  },
-  "date": {
-    "$date": "2020-07-07T10:28:40.702Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "5f044e581003d10348d743b9"
-  },
-  "activityType": "Running",
-  "likes": [],
-  "comments": [],
-  "owner": {
-    "$oid": "5f0448a3e94e9502f667bd53"
-  },
-  "description": "Just a mock activity for Ritesh Taurani",
-  "calories": 100,
-  "duration": 5000,
-  "distance": 1000,
-  "createdAt": {
-    "$date": "2020-07-07T10:28:40.704Z"
-  },
-  "date": {
-    "$date": "2020-07-07T10:28:40.704Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "5f044e581003d10348d743ba"
-  },
-  "activityType": "Running",
-  "likes": [],
-  "comments": [],
-  "owner": {
-    "$oid": "5f0448a3e94e9502f667bd54"
-  },
-  "description": "Just a mock activity for Jamil Al-Sulaimani",
-  "calories": 100,
-  "duration": 5000,
-  "distance": 1000,
-  "createdAt": {
-    "$date": "2020-07-07T10:28:40.704Z"
-  },
-  "date": {
-    "$date": "2020-07-07T10:28:40.704Z"
-  },
-  "__v": 0
-}]
+  {
+    "_id": {
+      "$oid": "5f044e581003d10348d743ba"
+    },
+    "activityType": "Running",
+    "likes": [],
+    "comments": [],
+    "owner": {
+      "$oid": "5f0448a3e94e9502f667bd54"
+    },
+    "description": "Just a mock activity for Jamil Al-Sulaimani",
+    "calories": 100,
+    "duration": 5000,
+    "distance": 1000,
+    "createdAt": {
+      "$date": "2020-07-07T10:28:40.704Z"
+    },
+    "date": {
+      "$date": "2020-07-07T10:28:40.704Z"
+    },
+    "__v": 0
+  }
+]
