@@ -26,7 +26,7 @@ router.post(
       description,
       calories,
     } = req.body;
-    const owner = req.user;
+    const owner = req.user._id;
     let photo = null;
     let photoId = null;
     if (req.file) {
@@ -45,8 +45,12 @@ router.post(
       photo,
       photoId,
     })
-      .then(() => {
-        res.redirect("/activities");
+      .then((activity) => {
+        User.findByIdAndUpdate(activity.owner, {
+          $push: { activities: activity._id },
+        }).then(() => {
+          res.redirect("/activities");
+        });
       })
       .catch((err) => console.log(err));
   }

@@ -11,11 +11,9 @@ router.get("/activities", loginCheck(), (req, res, next) => {
     Activity.find()
       .populate("owner")
       .then((activities) => {
-        console.log(user.friends);
         activities = activities.filter((activity) => {
           return user.friends.includes(activity.owner._id);
         });
-        console.log("this is activites", activities);
         res.render("user/activities", { activities });
       })
       .catch((err) => {
