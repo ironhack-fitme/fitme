@@ -27,6 +27,7 @@ const userSchema = new Schema({
     type: String,
     default: "URL to the default avatar",
   },
+  avatarId: String,
   bio: String,
   activites: [{ type: mongoose.Schema.ObjectId, ref: "Activity" }],
   createdAt: {
