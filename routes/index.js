@@ -2,26 +2,29 @@ const express = require('express');
 const { loginCheck } = require('./middlewares');
 const router  = express.Router();
 const axios = require('axios');
-
+const User=require('../models/User')
+const Activity=require('../models/Activity')
 /* GET home page. */
 router.get('/', (req, res, next) => {
   res.render('index');
 });
 router.get('/activities', loginCheck(), (req, res, next) => {
   const user = req.user;
-  res.render('user/activities');
-});
-router.get('/add-activities', loginCheck(), (req, res, next) => {
-  console.log(req);
-  const user = req.user;
-    // call the star wars api and then render the species list from the response into the index view
-    axios.get('https://swapi.py4e.com/api/species')
-      .then(response => {
-        console.log(response);
+   User.findById(user._id).then(foundUser=>{
+      Activity.find().populate('owner').then(activities => {
+          console.log(user.friends)
+          activities=activities.filter(activity=>{
+              return user.friends.includes(activity.owner._id)
+              
+          })
+          console.log('this is activites',activities);
+          res.render('user/activities',{activities})
       })
-      .catch(err => {
-        console.log(err);
-      })
-  res.render('user/activities',{user});
+          .catch(err => {
+          console.log(err);
+        })
+   
+   })
+
 });
 module.exports = router;

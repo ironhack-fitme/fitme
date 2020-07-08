@@ -40,6 +40,5 @@ const activitySchema = new Schema({
   duration: Number,
   distance: Number,
 });
-
 const Activity = mongoose.model("Activity", activitySchema);
 module.exports = Activity;
