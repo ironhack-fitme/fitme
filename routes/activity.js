@@ -7,9 +7,10 @@ const Comment = require("../models/Comment");
 const User = require("../models/User");
 const { uploader, cloudinary } = require("../config/cloudinary");
 
-router.post("/deleteactivity/:id", loginCheck(), (req, res, next) => {
+router.post("/deleteactivity", loginCheck(), (req, res, next) => {
   const owner = req.user;
-  let id = req.params.id;
+  const id = req.body.id;
+  Activity.findOneAndDelete(id).then((activity) => {});
   if (req.file) {
     photo = req.file.url;
     photoId = req.file.public_id;

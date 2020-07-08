@@ -29,7 +29,7 @@ const userSchema = new Schema({
   },
   avatarId: String,
   bio: String,
-  activites: [{ type: mongoose.Schema.ObjectId, ref: "Activity" }],
+  activities: [{ type: mongoose.Schema.ObjectId, ref: "Activity" }],
   createdAt: {
     type: Date,
     default: Date.now,
