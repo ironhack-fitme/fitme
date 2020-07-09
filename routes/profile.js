@@ -30,11 +30,39 @@ router.post("/profile/add", uploader.single("photo"), (req, res, next) => {
     .catch((error) => {
       console.log(error);
     });
-  // Movie.create({ title, description, imgPath, imgName })
-  //   .then(movie => {
-  //     res.redirect("/");
-  //   })
 });
-//---------------
+
+router.get("/user/:id/add", (req, res) => {
+  const id = req.user._id;
+  const friendId = req.params.id;
+  User.findById(id).then((user) => {
+    if (user.friends.includes(friendId)) {
+      res.render("user/search", {
+        message: "You have already befriended this user",
+      });
+    } else {
+      User.findByIdAndUpdate(id, {
+        $push: { friends: friendId },
+      }).then((user) => {
+        console.log(user);
+        res.redirect("/user/search");
+      });
+    }
+  });
+});
+
+router.post("/search", (req, res) => {
+  const search = req.body.text;
+  User.find()
+    .then((user) => {
+      user = user.filter(
+        (c) => c.username.includes(search) && c.id !== req.user.id
+      );
+      res.render("user/search", { user });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
 module.exports = router;
-// module.exports=uploader;
