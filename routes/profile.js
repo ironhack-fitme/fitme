@@ -44,7 +44,6 @@ router.get("/user/:id/add", (req, res) => {
       User.findByIdAndUpdate(id, {
         $push: { friends: friendId },
       }).then((user) => {
-        console.log(user);
         res.redirect("/user/search");
       });
     }

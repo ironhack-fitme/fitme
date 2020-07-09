@@ -3,21 +3,27 @@
    <div style="margin-top:5%;padding:4%;border:1px solid #00B7FF;border-radius:4%">
       <p style="font-size: 1em;"><strong>{{owner.fullname}}</strong></p>
       <p style="font-size: 2em;">{{activityType}}</p>
+
       <p style="font-size: 1em;"><span style="font-size: 1.5em;">Description:</span> {{description}}</p>
+      <p style="font-style: 1em;"><span style="font-size: 1.5em;">Calories :</span> {{calories}}</p>
+
+      {{#if photo}}
+      <img src="{{photo}}" alt="activity image">
+      {{/if}}
       <div id="activity-details">
-         <p style="font-style: 1em;"><span style="font-size: 1.5em;">Calories :</span> {{calories}}</p>
-         <i id="{{this.id}}" class="like fa fa-thumbs-up" type="submit">
-            <span id="#count">{{likes.length}}</span>
-         </i>
          <div id="{{this.id}}div" style="margin-top:5%;padding:4%;border:1px solid #00B7FF;border-radius:4%">
             {{#each comments}}
-            <p>{{text}}</p>
+            <p>{{this.owner.fullname}} : {{text}}</p>
             {{/each}}
          </div>
          <div class="container" style="margin-top:5%;padding:4%;border:1px solid #00B7FF;border-radius:4%">
             <textarea type="text" value="" id="{{this.id}}comment" placeholder="add comment" name="comment"></textarea>
             <i id="{{this.id}}" class="fas fa-plus" type="submit"></i>
          </div>
+         <i id="{{this.id}}" class="like fa fa-thumbs-up" type="submit">
+            <span id="#count">{{likes.length}}</span>
+         </i>
+
       </div>
    </div>
    {{/each}}
@@ -42,9 +48,9 @@
    function addComment(ele) {
       let comments = document.getElementById(ele.target.id + "comment").value;
       let div = document.getElementById(ele.target.id + "div");
-      axios.post(`/activities/comments/${ele.target.id}`, { newComment: comments }).then((activity) => {
+      axios.post(`/activities/comments/${ele.target.id}`, { newComment: comments }).then((response) => {
          let p = document.createElement("p");
-         p.innerText = comments;
+         p.innerText = response.data.user + ": " + comments;
          div.appendChild(p);
          comments.placeholderx = "";
       });
