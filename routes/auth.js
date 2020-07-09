@@ -62,21 +62,20 @@ router.post("/signup", (req, res, next) => {
   User.findOne({ username: username }).then((found) => {
     if (found !== null) {
       res.render("auth/signup", { message: "Wrong credentials" });
+      res.end();
     } else {
       // we can create a user with the username and password pair
       const salt = bcrypt.genSaltSync();
       const hash = bcrypt.hashSync(password, salt);
-
       User.create({ username: username, password: hash, email })
         .then((dbUser) => {
-          // passport - login the user
           req.login(dbUser, (err) => {
             if (err) next(err);
-            else res.redirect("/activities");
+            else {
+              res.redirect("/activities");
+              res.end();
+            }
           });
-
-          // redirect to login
-          res.redirect("login");
         })
         .catch((err) => {
           next(err);
