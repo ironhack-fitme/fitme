@@ -131,7 +131,6 @@ passport.use(
       callbackURL: "https://ironhack-fitme.herokuapp.com/auth/fitbit/callback",
     },
     (accessToken, refreshToken, profile, done) => {
-      console.log(profile._json);
       // find a user with profile.id as githubId or create one
       User.findOne({ fitbitId: profile.id })
         .then((found) => {

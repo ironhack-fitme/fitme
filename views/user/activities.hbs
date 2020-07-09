@@ -30,33 +30,23 @@
       })
    })
    function toggleLike(ele) {
-      //ele.target.classList.toggle("fa-thumbs-down");
-      //console.log(ele.target.querySelector('span'))
       axios.post(`/activities/${ele.target.id}`).then((activity) => {
-         console.log(activity.data)
          ele.target.querySelector('span').innerText = activity.data.likes.length
       });
    }
-   console.log(document.querySelectorAll(".fa-plus"))
    document.querySelectorAll(".fa-plus").forEach(el => {
       el.addEventListener("click", function (event) {
          addComment(event);
       })
    })
-   console.log(document.querySelectorAll(".fa-plus"))
    function addComment(ele) {
-      console.log(document.querySelectorAll(".fa-plus"))
-      console.log(document.getElementById(ele.target.id + "comment").value, "HERE")
       let comments = document.getElementById(ele.target.id + "comment").value;
       let div = document.getElementById(ele.target.id + "div");
-      console.log(div, "DIV")
-      //console.log('Brand new world',comments);
       axios.post(`/activities/comments/${ele.target.id}`, { newComment: comments }).then((activity) => {
          let p = document.createElement("p");
          p.innerText = comments;
          div.appendChild(p);
          comments.placeholderx = "";
-         console.log(activity);
       });
    }
 </script>
