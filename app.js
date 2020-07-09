@@ -25,7 +25,7 @@ mongoose.set("useCreateIndex", true);
 mongoose.set("useUnifiedTopology", true);
 
 mongoose
-  .connect("process.env.MONGODB_URI || mongodb://localhost/fitme", {
+  .connect(process.env.MONGODB_URI || "mongodb://localhost/fitme", {
     useNewUrlParser: true,
   })
   .then((x) => {
