@@ -11,6 +11,7 @@ router.get("/activities", loginCheck(), (req, res, next) => {
     Activity.find()
       .populate("owner")
       .populate("comments")
+      .populate({ path: "comments", populate: { path: "owner" } })
       .then((activities) => {
         activities = activities.filter((activity) => {
           return user.friends.includes(activity.owner._id);
@@ -61,18 +62,12 @@ router.post("/activities/comments/:activityId", function (req, res) {
     text: newComment,
     Activity: activityId,
     owner: req.user._id,
-  })
-    .then((comments) => {
-      Activity.findByIdAndUpdate(activityId, {
-        $push: { comments: comments._id },
-      })
-        .then((activity) => res.json(activity))
-        .catch((err) => {
-          console.log(err);
-        });
-      res.redirect("/activities");
-    })
-    .catch((err) => console.log(err));
+  }).then((comment) => {
+    res.json({ comment, user: req.user.fullname });
+    Activity.findByIdAndUpdate(activityId, {
+      $push: { comments: comment._id },
+    });
+  });
 });
 
 module.exports = router;
