@@ -1,4 +1,4 @@
-{{!-- <div style="margin-top: 20%;padding:4%;border:1px solid #00B7FF;border-radius:4%">
+<div style="margin-top: 20%;padding:4%;border:1px solid #00B7FF;border-radius:4%">
     {{#with user}}
     {{username}}
     <img src="{{avatar}}" alt="" style="width: 70px;border-radius:46%" onclick=" document.
@@ -38,6 +38,8 @@
         <p style="font-style: 1em;"><span style="font-size: 1.5em;">Calories: </span> {{calories}}</p>
         <p style="font-style: 1em;"><span style="font-size: 1.5em;">Duration: </span> {{duration}}</p>
         <p style="font-style: 1em;"><span style="font-size: 1.5em;">Date: </span> {{date}}</p>
+        <p style="font-style: 1em;"><span style="font-size: 1.5em;">Likes: </span> {{likes}}</p>
+        <p style="font-style: 1em;"><span style="font-size: 1.5em;">Comments: </span> {{comments}}</p>
         <img src="{{photo}}" alt="" width="25%">
         <div class="deleteEdit">
             <form action="/activity/{{_id}}/edit" method="get">
@@ -46,65 +48,6 @@
             <form action="/activity/delete/{{_id}}" method="post">
                 <button type="submit" style="border:none"><i class="fas fa-trash-alt" type="submit"></i></button>
             </form>
-        </div>
-    </div>
-</div>
-{{/each}}
-</p>
-{{/with}}
-</div> --}}
-
-
-<div style="margin-top: 20%;padding:4%;border:1px solid #00B7FF;border-radius:4%">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <form class="form-inline my-2 my-lg-0" method="POST" action="/search">
-            <input name="text" class="form-control mr-sm-2 alsoInput" type="text" placeholder="Search"
-                aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-</div>
-</nav>
-{{#with user}}
-{{username}}
-<img src="{{avatar}}" alt="" style="width: 70px;border-radius:46%" onclick=" document.
-       getElementById('id01').style.display='block' " id="load" style="width:auto;">
-<div id="id01" class="modal">
-    <form class="modal-content animate" action="/profile/add" method="post" enctype="multipart/form-data">
-        <div class="imgcontainer">
-            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">
-                &times;</span>
-        </div>
-        <div class="container">
-            <label>Photo</label>
-            <input type="file" name="photo">
-            <button class="btn-primary" type="submit">Add your photo</button>
-        </div>
-</div>
-</div>
-</form>
-</div>
-</div>
-<script>
-    var modal = document.getElementById('id01');
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-</script>
-<p>friends: {{this.friends.length}}</p>
-<p> activities:
-    {{#each activites}}
-<div style="margin-top:5%;padding:4%;border:1px solid #00B7FF;border-radius:4%">
-    <p style="font-size: 1em;"><strong>{{owner.fullname}}</strong></p>
-    <p style="font-size: 2em;">{{activityType}}</p>
-    <p style="font-size: 1em;"><span style="font-size: 1.5em;">Description:</span> {{description}}</p>
-    <div id="activity-details">
-        <p style="font-style: 1em;"><span style="font-size: 1.5em;">Calories :</span> {{calories}}</p>
-        <div class="deleteEdit">
-            <form action="/activities/edit/{{this._id}}" method="POST"><i class="fas fa-edit" type="submit"></i></form>
-            <form action="/activities/delete/{{this._id}}" method="POST">
-                <i class="fas fa-trash-alt" type="submit"></i></form>
         </div>
     </div>
 </div>

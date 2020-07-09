@@ -25,7 +25,8 @@ const userSchema = new Schema({
   friends: [{ type: mongoose.Schema.ObjectId, ref: "User" }],
   avatar: {
     type: String,
-    default: "URL to the default avatar",
+    default:
+      "https://res.cloudinary.com/ironhack-fitme/image/upload/v1594200960/FitMe/index.png",
   },
   avatarId: String,
   bio: String,
