@@ -25,7 +25,7 @@ mongoose.set("useCreateIndex", true);
 mongoose.set("useUnifiedTopology", true);
 
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect(process.env.MONGODB_URI || "mongodb://localhost/fitme")
   .then((x) => {
     console.log(
       `Connected to Mongo! Database name: '${x.connections[0].name}'`
@@ -128,9 +128,10 @@ passport.use(
     {
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: "http://127.0.0.1:3000/auth/fitbit/callback",
+      callbackURL: "https://ironhack-fitme.herokuapp.com/auth/fitbit/callback",
     },
     (accessToken, refreshToken, profile, done) => {
+      console.log(profile._json);
       // find a user with profile.id as githubId or create one
       User.findOne({ fitbitId: profile.id })
         .then((found) => {
@@ -139,13 +140,16 @@ passport.use(
             done(null, found);
           } else {
             // no user with that githubId
-            return User.create({ fitbitId: profile.id }).then((dbUser) => {
+            return User.create({
+              fitbitId: profile.id,
+              fullname: profile._json.user.fullName,
+              avatar: profile._json.user.avatar,
+            }).then((dbUser) => {
               done(null, dbUser);
             });
           }
         })
         .catch((err) => {
-          console.log(found);
           done(err);
         });
     }
