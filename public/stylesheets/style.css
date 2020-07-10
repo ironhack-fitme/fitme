@@ -332,14 +332,17 @@ input[type=text]:placeholder {
   background-color: #56baed;
   content: "";
   transition: width 0.2s;
+  text-decoration: none;
 }
 
 .underlineHover:hover {
   color: #0d0d0d;
+  text-decoration: none;
 }
 
 .underlineHover:hover:after {
   width: 100%;
+  text-decoration: none;
 }
 
 
