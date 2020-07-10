@@ -44,17 +44,15 @@ router.get("/user/:id/add", (req, res) => {
       User.findByIdAndUpdate(id, {
         $push: { friends: friendId },
       }).then((user) => {
-        res.redirect("/user/search");
+        res.redirect("/activities");
       });
     }
   });
 });
 
 router.post("/search", (req, res) => {
-  
- 
   const search = req.body.text2;
-  console.log(search)
+  console.log(search);
   User.find()
     .then((user) => {
       user = user.filter(
