@@ -51,7 +51,10 @@ router.get("/user/:id/add", (req, res) => {
 });
 
 router.post("/search", (req, res) => {
-  const search = req.body.text;
+  
+ 
+  const search = req.body.text2;
+  console.log(search)
   User.find()
     .then((user) => {
       user = user.filter(
