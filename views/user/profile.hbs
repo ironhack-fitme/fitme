@@ -2,7 +2,7 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="position:sticky;top:0px">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="position:sticky;top:0px;z-index:1">
  
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -17,7 +17,7 @@
         <a class="nav-link" href="/AddActivity" style="color: #00B7FF;">New Activity</a>
       </li>
        <li class="nav-item active">
-        <a class="nav-link" href="/logout" style="color: #00B7FF;">Logout</a>
+        <a class="nav-link" href="/auth/logout" style="color: #00B7FF;">Logout</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" method="post" action="/search">
@@ -56,11 +56,11 @@
 
 
 
-<div style="position:fixed;left:5%;width:50rem;" >
+<div style="position:fixed;left:5%;width:50rem;top:6rem" >
     {{#with user}}
     <img src="{{avatar}}" alt="" style="width:150px;border-radius:50%;height:150px" onclick=" document.
       getElementById('id01').style.display='block' " id="load" style="width:auto;">
-    <hr style="width: 150px; position:relative;left:-29rem ;color:#00B7FF" > <span style="position: relative;left:1rem;font-size:x-large;font-weight:700 ;color:#00B7FF">{{username}}</span><span style="position: relative;left:2rem;color:#00B7FF"> {{this.friends.length}} Friends </span>
+   <hr style="width: 0px;"><span style="position: relative;left:1rem;font-size:x-large;font-weight:700 ;color:#00B7FF">{{fullname}}</span><span style="position: relative;left:2rem;color:#00B7FF"> {{this.friends.length}} Friends </span>
     <div id="id01" class="modal">
         <form class="modal-content animate" action="/profile/add" method="post" enctype="multipart/form-data">
             <div class="imgcontainer">
@@ -90,14 +90,13 @@
 
     <p style="font-size: xx-large;font-weight:900;color:#00B7FF;text-align:center;margin-top:15%"> Activities</p>
     {{#each activities}}
-<div style="padding:4%;border:1px solid #00B7FF;border-radius:4%;width:40rem;position:relative;left:40%;">
+<div style="padding:4%;width:40rem;position:relative;left:40%;margin-bottom:10%">
     <p style="font-size: 1em;"><strong>{{owner.fullname}}</strong></p>
     <p style="font-size: 2em;">{{activityType}}</p>
     <p style="font-size: 1em;"><span style="font-size: 1.5em;">Description: </span> {{description}}</p>
     <div id="activity-details">
         <p style="font-style: 1em;"><span style="font-size: 1.5em;">Calories: </span> {{calories}}</p>
         <p style="font-style: 1em;"><span style="font-size: 1.5em;">Duration: </span> {{duration}}</p>
-        <p style="font-style: 1em;"><span style="font-size: 1.5em;">Date: </span> {{date}}</p>
         <p style="font-style: 1em;"><span style="font-size: 1.5em;">Likes: </span> {{likes}}</p>
         <p style="font-style: 1em;"><span style="font-size: 1.5em;">Comments: </span> {{comments}}</p>
         <img src="{{photo}}" alt="" width="25%">
