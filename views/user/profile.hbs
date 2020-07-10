@@ -90,14 +90,13 @@
 
     <p style="font-size: xx-large;font-weight:900;color:#00B7FF;text-align:center;margin-top:15%"> Activities</p>
     {{#each activities}}
-<div style="padding:4%;border:1px solid #00B7FF;border-radius:4%;width:40rem;position:relative;left:40%;margin-bottom:10%">
+<div style="padding:4%;width:40rem;position:relative;left:40%;margin-bottom:10%">
     <p style="font-size: 1em;"><strong>{{owner.fullname}}</strong></p>
     <p style="font-size: 2em;">{{activityType}}</p>
     <p style="font-size: 1em;"><span style="font-size: 1.5em;">Description: </span> {{description}}</p>
     <div id="activity-details">
         <p style="font-style: 1em;"><span style="font-size: 1.5em;">Calories: </span> {{calories}}</p>
         <p style="font-style: 1em;"><span style="font-size: 1.5em;">Duration: </span> {{duration}}</p>
-        <p style="font-style: 1em;"><span style="font-size: 1.5em;">Date: </span> {{date}}</p>
         <p style="font-style: 1em;"><span style="font-size: 1.5em;">Likes: </span> {{likes}}</p>
         <p style="font-style: 1em;"><span style="font-size: 1.5em;">Comments: </span> {{comments}}</p>
         <img src="{{photo}}" alt="" width="25%">

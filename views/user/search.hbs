@@ -24,12 +24,12 @@
     </form>
   </div>
 </nav>
-<div style="margin-top: 10%; position:relative;left:-2rem;padding:3%">
+<div style="margin-top: 10%; position:relative;left:15rem;padding:3% ">
     {{#each user}}
     <img src="{{this.avatar}}" alt="" style="width:30px;border-radius:50%">
     <span>{{this.username}}</span>
     <form action="/user/{{this._id}}/add" method="get" style="position: relative;left:40%">
-        <button type="submit"><i class=" fas fa-user-plus"></i></button>
+        <button type="submit" style="border: none; position:relative;top:-1rem"><i class=" fas fa-user-plus"></i></button>
     </form>
     {{!-- {{#if errorMessage}}
     <div class="error-message">{{errorMessage}}</div>
