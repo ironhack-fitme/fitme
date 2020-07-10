@@ -58,7 +58,7 @@ router.post("/search", (req, res) => {
   User.find()
     .then((user) => {
       user = user.filter(
-        (c) => c.username.includes(search) && c.id !== req.user.id
+        (c) => c.fullname.includes(search) && c.id !== req.user.id
       );
       res.render("user/search", { user });
     })
