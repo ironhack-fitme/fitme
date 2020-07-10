@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="position:sticky;top:0px">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="position:sticky;top:0px;z-index:1">
  
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -27,14 +27,17 @@
 
 
 
-<div style="margin-top: 10%;">
+<div style="margin-top: 10%;width:30rem;margin-bottom:12%;position:relative;left:30%;">
    {{#each activities}}
-   <div style="margin-top:5%;padding:4%;border:1px solid #00B7FF;border-radius:4%">
-      <p style="font-size: 1em;"><strong>{{owner.fullname}}</strong></p>
+   <div style="margin-top:5%;padding:4%;;border:1px solid #00B7FF;border-radius:4%;overflow-y:scroll;height:400px">
+      <img src="{{owner.avatar}}" alt="" style="width:3rem;height:3rem;border-radius:50%;" >
+      <span style="font-size: 1em;"><strong>{{owner.fullname}}</strong></span>
       <p style="font-size: 2em;">{{activityType}}</p>
 
-      <p style="font-size: 1em;"><span style="font-size: 1.5em;">Description:</span> {{description}}</p>
-      <p style="font-style: 1em;"><span style="font-size: 1.5em;">Calories :</span> {{calories}}</p>
+      <p style="font-size: 1em;"><span style="font-size: 1.5em;"></span> {{description}}</p>
+      <p style="font-style: 1em;"><span style="font-size: 0.7em;margin-left:2rem">Calories :{{calories}}</span>
+      <span style="font-size: 0.7em;;margin-left:2rem">Distance :{{calories}} m</span>
+      <span style="font-size: 0.7em;;margin-left:2rem">Duration :{{calories}} min</span> </p>
 
       {{#if photo}}
       <img src="{{photo}}" alt="activity image">
@@ -49,7 +52,7 @@
             <textarea type="text" value="" id="{{this.id}}comment" placeholder="add comment" name="comment"></textarea>
             <i id="{{this.id}}" class="fas fa-plus" type="submit"></i>
          </div>
-         <i id="{{this.id}}" class="like fa fa-thumbs-up" type="submit">
+         <i id="{{this.id}}" class="like fa fa-thumbs-up" type="submit" style="margin-bottom: 9%;">
             <span id="#count">{{likes.length}}</span>
          </i>
 
