@@ -21,7 +21,7 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" method="post" action="/search">
-      <input class="form-control mr-sm-2" name="text2" type="search" placeholder="Search" aria-label="Search">
+      <input class="form-control mr-sm-2" name="text2" type="search" placeholder="Search friends" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
@@ -97,10 +97,12 @@
     <div id="activity-details">
         <p style="font-style: 1em;"><span style="font-size: 1.5em;">Calories: </span> {{calories}}</p>
         <p style="font-style: 1em;"><span style="font-size: 1.5em;">Duration: </span> {{duration}}</p>
-        <p style="font-style: 1em;"><span style="font-size: 1.5em;">Likes: </span> {{likes}}</p>
+        <p style="font-style: 1em;"><span style="font-size: 1.5em;"><i id="{{this.id}}" class="like fa fa-thumbs-up" type="submit" style="margin-bottom: 9%;">
+            <span id="#count">{{likes.length}}</span>
+         </i> </span> {{likes}}</p>
         <p style="font-style: 1em;"><span style="font-size: 1.5em;">Comments: </span> {{comments}}</p>
         <img src="{{photo}}" alt="" width="25%">
-        <div class="deleteEdit">
+        <div class="deleteEdit" style="display: flex;justify-content:flex-end">
             <form action="/activity/{{_id}}/edit" method="get">
                 <button type="submit" style="border:none"><i class="fas fa-edit" type="submit"></i></button>
             </form>
