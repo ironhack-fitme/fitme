@@ -1,20 +1,27 @@
-<h1>login page</h1>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
 
-<form id="form" action="/auth/login" method="POST">
-  <div class="md-form form-group w-90">
-    <label for="exampleInputEmail1">User name</label>
-    <input type="text" class="form-control" name="username" id="exampleInputEmail1" required>
-  </div>
-  <div class="md-form form-group  w-90">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
-  </div>
-  <button type="submit" class="btn btn-primary">Login</button>
-  {{#if Message}}
-  <div class="error-message">{{Message}}</div>
-  {{/if}}
-</form>
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img />
+    </div>
 
-<a href="/">Home</a>
-<a href="/auth/fitbit">Login via Fitbit</a>
-<a href="/auth/signup">Sign up</a>
+    <!-- Login Form -->
+    <form action="/auth/login" method="post">
+      <input type="text" id="login" class="fadeIn second" name="username" placeholder="Username">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="/auth/signup">Don't have an account? Register here</a>
+      <br>
+      <a class="underlineHover">or</a>
+      <br>
+      <a class="underlineHover" href="/auth/fitbit">Login via Fitbit</a>
+    </div>
+
+  </div>
+</div>

@@ -1,8 +1,66 @@
-<div style="margin-top: 20%;padding:4%;border:1px solid #00B7FF;border-radius:4%">
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="position:sticky;top:0px">
+ 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/activities" style="color: #00B7FF;">Activities <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/AddActivity" style="color: #00B7FF;">New Activity</a>
+      </li>
+       <li class="nav-item active">
+        <a class="nav-link" href="/logout" style="color: #00B7FF;">Logout</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" method="post" action="/search">
+      <input class="form-control mr-sm-2" name="text2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="position:fixed;left:5%;width:50rem;" >
     {{#with user}}
-    {{username}}
-    <img src="{{avatar}}" alt="" style="width: 70px;border-radius:46%" onclick=" document.
+    <img src="{{avatar}}" alt="" style="width:150px;border-radius:50%;height:150px" onclick=" document.
       getElementById('id01').style.display='block' " id="load" style="width:auto;">
+    <hr style="width: 150px; position:relative;left:-29rem ;color:#00B7FF" > <span style="position: relative;left:1rem;font-size:x-large;font-weight:700 ;color:#00B7FF">{{username}}</span><span style="position: relative;left:2rem;color:#00B7FF"> {{this.friends.length}} Friends </span>
     <div id="id01" class="modal">
         <form class="modal-content animate" action="/profile/add" method="post" enctype="multipart/form-data">
             <div class="imgcontainer">
@@ -12,13 +70,14 @@
             <div class="container">
                 <label>Photo</label>
                 <input type="file" name="photo">
-                <button class="btn-primary" type="submit">Add your photo</button>
+                <button class="btn-primary" type="submit" style="border: none;"><i class="fas fa-upload"></i></button>
             </div>
     </div>
 </div>
 </form>
 </div>
 </div>
+
 <script>
     var modal = document.getElementById('id01');
     window.onclick = function (event) {
@@ -27,10 +86,11 @@
         }
     }
 </script>
-<p>friends: {{this.friends.length}}</p>
-<p> activities:
+
+
+    <p style="font-size: xx-large;font-weight:900;color:#00B7FF;text-align:center;margin-top:15%"> Activities</p>
     {{#each activities}}
-<div style="margin-top:5%;padding:4%;border:1px solid #00B7FF;border-radius:4%">
+<div style="padding:4%;border:1px solid #00B7FF;border-radius:4%;width:40rem;position:relative;left:40%;">
     <p style="font-size: 1em;"><strong>{{owner.fullname}}</strong></p>
     <p style="font-size: 2em;">{{activityType}}</p>
     <p style="font-size: 1em;"><span style="font-size: 1.5em;">Description: </span> {{description}}</p>
@@ -52,6 +112,6 @@
     </div>
 </div>
 {{/each}}
-</p>
+
 {{/with}}
 </div>
