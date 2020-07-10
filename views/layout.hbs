@@ -30,7 +30,7 @@
   <ul class="nav justify-content-end w-100 head">
     {{!-- <img src="fitme.png" alt="" style="position: fixed; left: -3rem; width: 70px; top: 10px;" /> --}}
 
-    {{!-- <nav style="position:relative;top:0.1rem;left:-10rem"
+    <nav style="position:relative;top:0.1rem;left:-10rem"
       class="navbar navbar-expand-lg navbar-light bg-light mobile-1">
       <form style="height:0.1em;position:relative;top:-1em;left:3.3em" class="form-inline my-2 my-lg-0" method="POST"
         action="/search">
@@ -38,7 +38,7 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
       </div>
-    </nav> --}}
+    </nav>
 
    
     <li class="nav-item">
@@ -53,20 +53,22 @@
       <a class="nav-link homeLogin" href="/auth/logout">logout</a>
     </li>
      <li class="nav-item">
-      <div class="userInActivity">
-        {{#with user}}
-        <a href="/user/profile" class="nav-link homeLogin"><img src="{{avatar}}" alt=""
-            style="border-radius:50%;width:2rem;height:2rem"> <span style="
+   <div class="userInActivity">
+      {{#with user}}
+  <a href="/user/profile"><img src="{{avatar}}" alt="" style="border-radius:50%;width:2rem;height:2rem"> <span style="
   color:#00B7FF">{{username}}</span></a>
-        {{/with}}
-      </div>
+    {{/with}}
+</div>
     </li>
     <li class="nav-item">
       <a class="nav-link homeLogin" href="/activities">Activities</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link homeLogin" href="/AddActivity">Add activity</a>
+      <a class="nav-link homeLogin" href="/AddActivity">Add Activity</a>
     </li>
+    {{!-- <li class="nav-item">
+      <a class="nav-link homeLogin" href="/user/profile"></a>
+    </li> --}}
 
   </ul>
   <div class="fixed-top">
@@ -88,6 +90,13 @@
           <li class="nav-item">
             <a class="nav-link homeLogin" href="/auth/logout" style="color: #00B7FF;">logout</a>
           </li>
+             <li class="nav-item">
+      <a class="nav-link homeLogin" href="/activities">Activities</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link homeLogin" href="/AddActivity">Add Activity</a>
+    </li>
+
         </ul>
 
       </div>
