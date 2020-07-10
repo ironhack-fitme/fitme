@@ -1,4 +1,4 @@
-<div>
+<div style="margin-top: 10%;">
    {{#each activities}}
    <div style="margin-top:5%;padding:4%;border:1px solid #00B7FF;border-radius:4%">
       <p style="font-size: 1em;"><strong>{{owner.fullname}}</strong></p>
@@ -28,7 +28,7 @@
    </div>
    {{/each}}
 </div>
-<a href="/auth/logout" style="color :black">Click here to logout</a>
+
 <script>
    document.querySelectorAll(".like").forEach(el => {
       el.addEventListener("click", function (event) {

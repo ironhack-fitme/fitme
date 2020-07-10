@@ -47,6 +47,10 @@ a:hover {
   text-decoration: none;
   color: white;
 }
+.mobile-2{
+  position: fixed;
+  left: 49rem;
+}
 
 .modal {
   display: none;
@@ -102,17 +106,32 @@ a:hover {
 }
 
 .fa-thumbs-up {
-  color: blue;
+  color: grey;
+ 
 }
 
-.fa-thumbs-down {
-  color: red;
+.fathumbsdownToggle {
+  color: #116466;
 }
 
 .fa:hover {
   transform: scale(1.2);
 }
-
+.head{
+  position: fixed;
+  top: 1%;
+}
+.roll{
+  margin-top: 9%;
+}
+.mobile-3{
+  display: none
+  ;
+}
+.userInActivity{
+ position: relative;
+ top: 19%;
+}
 @media only screen and (max-width: 480px) {
   .justify-content-end {
     display: none;
@@ -121,4 +140,14 @@ a:hover {
   .fixed-top {
     display: block;
   }
+  .mobile-2{
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+  }
+.mobile-3{
+  margin-top: 60px;
+  margin-left: 100px;
+  display: inline-block;
+}
 }
