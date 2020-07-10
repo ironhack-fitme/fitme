@@ -30,7 +30,7 @@
 <div style="margin-top: 10%;width:30rem;margin-bottom:12%;position:relative;left:30%;">
    {{#each activities}}
    <div style="margin-top:5%;padding:4%;overflow-y:scroll;height:400px;">
-      <img src="{{owner.avatar}}" alt="" style="width:3rem;height:3rem;border-radius:50%;" >
+      <img src="{{this.owner.avatar}}" alt="" style="width:3rem;height:3rem;border-radius:50%;" >
       <span style="font-size: 1em;"><strong>{{owner.fullname}}</strong></span>
       <p style="font-size: 2em;">{{activityType}}</p>
 
@@ -45,7 +45,7 @@
       <div id="activity-details">
          <div id="{{this.id}}div" style="margin-top:5%;padding:4%;">
             {{#each comments}}
-            <p>{{this.owner.fullname}} : {{text}}</p>
+            <p>{{this.owner.fullname}} : {{this.text}}</p>
             {{/each}}
          </div>
          <div class="container" style="margin-top:5%;padding:4%;">
