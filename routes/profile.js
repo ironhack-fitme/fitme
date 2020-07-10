@@ -37,7 +37,7 @@ router.get("/user/:id/add", (req, res) => {
   const friendId = req.params.id;
   User.findById(id).then((user) => {
     if (user.friends.includes(friendId)) {
-      res.render("user/search", {
+      res.redirect("/activities", {
         message: "You have already befriended this user",
       });
     } else {
