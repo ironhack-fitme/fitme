@@ -5,128 +5,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/fontawesome.min.css" />
-  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
-  <script src="https://kit.fontawesome.com/a48b83a05c.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-    crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet" />
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <title>FitMe</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 
 <body>
-  <ul class="nav justify-content-end w-100 head">
-    {{!-- <img src="fitme.png" alt="" style="position: fixed; left: -3rem; width: 70px; top: 10px;" /> --}}
-
-    {{!-- <nav style="position:relative;top:0.1rem;left:-10rem"
-      class="navbar navbar-expand-lg navbar-light bg-light mobile-1">
-      <form style="height:0.1em;position:relative;top:-1em;left:3.3em" class="form-inline my-2 my-lg-0" method="POST"
-        action="/search">
-        <input name="text" class="form-control mr-sm-2 alsoInput" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-      </div>
-    </nav> --}}
-
-   
-    <li class="nav-item">
-      <a class="nav-link active homeLogin" href="/auth/signup">Sign Up</a>
-    </li>
-     
-    <li class="nav-item">
-      <a class="nav-link homeLogin" href="/auth/login">Login</a>
-    </li>
-
-    <li class="nav-item">
-      <a class="nav-link homeLogin" href="/auth/logout">logout</a>
-    </li>
-     <li class="nav-item">
-      <div class="userInActivity">
-        {{#with user}}
-        <a href="/user/profile" class="nav-link homeLogin"><img src="{{avatar}}" alt=""
-            style="border-radius:50%;width:2rem;height:2rem"> <span style="
-  color:#00B7FF">{{username}}</span></a>
-        {{/with}}
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link homeLogin" href="/activities">Activities</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link homeLogin" href="/AddActivity">Add activity</a>
-    </li>
-
-  </ul>
-  <div class="fixed-top">
-    <div class="collapse" id="navbarToggleExternalContent">
-      <div class="bg-info p-4">
-        <ul class="nav justify-content-center w-100">
-          <li class="nav-item">
-            <a class="nav-link active ml-1" href="/auth/signup" style="color: burlywood;">Sign Up</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/auth/login" style="color: burlywood;">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/" style="color: burlywood;">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link homeLogin" href="/user/profile">Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link homeLogin" href="/auth/logout" style="color: #00B7FF;">logout</a>
-          </li>
-        </ul>
-
-      </div>
-    </div>
-    <nav class="navbar navbar-dark bg-info">
-      <span style="color: black;"> <img src="fitme.png" alt=""
-          style="position: fixed; left: 3rem; width: 70px; top: 10px;" /> logo</span>
-      <button class="navbar-toggler mr-0" type="button" data-toggle="collapse"
-        data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </nav>
-  </div>
-  <nav style="position:relative;top:0.1rem;left:-10rem"
-    class="navbar navbar-expand-lg navbar-light bg-light mobile-1 mobile-3">
-    <form style="height:0.1em;position:relative;top:-1em;left:3.3em" class="form-inline my-2 my-lg-0" method="POST"
-      action="/search">
-      <input name="text" class="form-control mr-sm-2 alsoInput" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    </div>
-  </nav>
-  <ul class="nav fixed-bottom justify-content-center mobile-2">
-    <li class="nav-item">
-      <a class="nav-link" href="#" style="color: gray;">
-        <i class="fab fa-twitter"></i>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#" style="color: gray;">
-        <i class="fab fa-instagram"></i>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#" style="color: gray;"><i class="fab fa-facebook-f"></i></a>
-    </li>
-  </ul>
-
   {{{body}}}
 </body>
 
