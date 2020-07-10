@@ -1,3 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="position:sticky;top:0px;z-index:1">
+ 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/user/profile" style="color: #00B7FF;">Profile <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/activities" style="color: #00B7FF;">Activities</a>
+      </li>
+       <li class="nav-item active">
+        <a class="nav-link" href="/auth/logout" style="color: #00B7FF;">Logout</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" method="post" action="/search">
+      <input class="form-control mr-sm-2" name="text2" type="search" placeholder="Search friends" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
 <h2 style="margin-top: 7%;position:relative;left:40%">Add a new activity</h2>
 {{!-- <form action="/AddActivity" method="post" enctype="multipart/form-data" style="margin-top: 7%;">
   <select name="activityType" id="activityType">

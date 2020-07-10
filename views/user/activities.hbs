@@ -14,7 +14,7 @@
         <a class="nav-link" href="/AddActivity" style="color: #00B7FF;">New Activity</a>
       </li>
        <li class="nav-item active">
-        <a class="nav-link" href="/logout" style="color: #00B7FF;">Logout</a>
+        <a class="nav-link" href="/auth/logout" style="color: #00B7FF;">Logout</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" method="post" action="/search">
@@ -40,7 +40,7 @@
       <span style="font-size: 0.7em;;margin-left:2rem">Duration :{{duration}} min</span> </p>
 
       {{#if photo}}
-      <img src="{{photo}}" alt="activity image">
+      <img src="{{photo}}" alt="activity image" style="width: 70%;">
       {{/if}}
       <div id="activity-details">
          <div id="{{this.id}}div" style="margin-top:5%;padding:4%;">
