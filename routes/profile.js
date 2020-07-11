@@ -37,28 +37,26 @@ router.get("/user/:id/add", (req, res) => {
   const friendId = req.params.id;
   User.findById(id).then((user) => {
     if (user.friends.includes(friendId)) {
-      res.render("user/search", {
+      res.redirect("/activities", {
         message: "You have already befriended this user",
       });
     } else {
       User.findByIdAndUpdate(id, {
         $push: { friends: friendId },
       }).then((user) => {
-        res.redirect("/user/search");
+        res.redirect("/activities");
       });
     }
   });
 });
 
 router.post("/search", (req, res) => {
-  
- 
   const search = req.body.text2;
-  console.log(search)
+  console.log(search);
   User.find()
     .then((user) => {
       user = user.filter(
-        (c) => c.username.includes(search) && c.id !== req.user.id
+        (c) => c.fullname.includes(search) && c.id !== req.user.id
       );
       res.render("user/search", { user });
     })

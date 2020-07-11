@@ -5,6 +5,7 @@ const axios = require("axios");
 const Activity = require("../models/Activity");
 const User = require("../models/User");
 const Comment = require("../models/Comment");
+
 router.get("/activities", loginCheck(), (req, res, next) => {
   const user = req.user;
   User.findById(user._id).then((foundUser) => {
@@ -55,6 +56,7 @@ router.post("/activities/:activityId", function (req, res) {
       console.log(err);
     });
 });
+
 router.post("/activities/comments/:activityId", function (req, res) {
   let activityId = req.params.activityId;
   const { newComment } = req.body;
@@ -62,12 +64,18 @@ router.post("/activities/comments/:activityId", function (req, res) {
     text: newComment,
     Activity: activityId,
     owner: req.user._id,
-  }).then((comment) => {
-    res.json({ comment, user: req.user.fullname });
-    Activity.findByIdAndUpdate(activityId, {
-      $push: { comments: comment._id },
-    });
-  });
+  })
+    .then((comments) => {
+      res.json({ comments, user: req.user.fullname });
+      Activity.findByIdAndUpdate(activityId, {
+        $push: { comments: comments._id },
+      })
+        .then((activity) => res.json(activity))
+        .catch((err) => {
+          console.log(err);
+        });
+    })
+    .catch((err) => console.log(err));
 });
 
 module.exports = router;
